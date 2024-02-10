@@ -1,18 +1,36 @@
 ﻿/* style.css */
 
 /* Resetting default margin and padding */
-html, body {
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+/* Styling the video container */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure video stays behind the content */
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Centering the content */
-body {
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    padding-top: 100vh; /* Add padding to ensure content starts after the video */
+    z-index: 1; /* Ensure content appears above the video */
 }
 
 /* Styling the form container */
@@ -39,55 +57,3 @@ input[type="date"] {
 button {
     padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* Adding some space between elements */
-br {
-    margin-bottom: 10px;
-}
-* {
-    box-sizing: border-box;
-}
-
-.container {
-    display: flex;
-}
-
-img {
-    width: 100%;
-}
-
-.left,
-.right {
-    padding: 20px;
-    width: 50%;
-    border: solid;
-}
-
-.content {
-    width: 80%;
-    margin: 40px auto;
-}
-
-.title {
-    text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .left,
-    .right {
-        width: 100%;
-    }
-
-    .content {
-        width: 100%;
-    }
-}
