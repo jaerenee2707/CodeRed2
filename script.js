@@ -5,7 +5,7 @@ function on() {
 
 var tripType = "onewaytrip";
 var apiKey = "";
-var departAirport = "HEL";
+//var departAirport = "HEL";
 var arrivalAirport = "OUL";
 var desiredDate = "2024-05-20";
 var numAdults = "1";
@@ -21,9 +21,15 @@ function cycleKeys() {
 }
 
 function fetchFlightInfo() {
+
+    var inputDepartureAirport = document.getElementById('departureAirport').value;
+
+    document.getElementById('departureAirportDisplay').innerText = "Departure Airport: " + inputDepartureAirport;
+
+
     // Define the API URL
     cycleKeys();
-    const apiUrl = "https://api.flightapi.io/" + tripType + "/" + apiKey + "/" + departAirport + "/" + arrivalAirport + "/" + desiredDate + "/" + numAdults + "/" + numKids + "/" + numBabies + "/" + type + "/" + currency;
+    const apiUrl = "https://api.flightapi.io/" + tripType + "/" + apiKey + "/" + inputDepartureAirport + "/" + arrivalAirport + "/" + desiredDate + "/" + numAdults + "/" + numKids + "/" + numBabies + "/" + type + "/" + currency;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -34,6 +40,11 @@ function fetchFlightInfo() {
             console.error("Error fetching flight info:", error);
         });
 }
+
+
+
+
+
 
 
 // "https://api.flightapi.io/onewaytrip/5f8b1ec2a9d31578961b4109f4dfd8/HEL/OUL/2024-05-20/1/0/0/Economy/USD"
