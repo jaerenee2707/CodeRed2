@@ -24,11 +24,8 @@ function fetchFlightInfo() {
     var inputDepartureAirport = document.getElementById('departureAirport').value;
     var inputArrivalAirport = document.getElementById('arrivalAirport').value;
     var inputDate = document.getElementById('Date').value;
-
-
     var inputCurrency = document.getElementById('currency').value;
 
-    document.getElementById('departureAirportDisplay').innerText = "Currency: " + inputDate;
 
 
     // Define the API URL
