@@ -58,3 +58,10 @@ function printAgain() {
     console.log("Price Amount:", priceAmount);
 }
 
+var btnDown = document.getElementById("downButton");
+btnDown.onclick = function scrollDown() {
+    window.scroll(0, window.scrollY + 1000);
+}
+
+
+

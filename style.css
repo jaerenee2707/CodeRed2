@@ -43,6 +43,10 @@ body, html {
     flex: 1; /* Equal width */
 }
 
+.right {
+    border-left: 2px dashed black;
+}
+
 /* Styling for form elements */
 label {
     display: block;
