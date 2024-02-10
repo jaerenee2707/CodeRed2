@@ -14,9 +14,9 @@ var type = "Economy";
 // var currency = "USD";
 var output = "";
 //function cycleKeys() {
-  //  keyBank = ["65c7bdbf4bc0e34e403d752565c7bdbf4bc0e34e403d7525"];
-   // ran = Math.floor(Math.random() * 1);
-    //apiKey = keyBank[ran];
+//  keyBank = ["65c7bdbf4bc0e34e403d752565c7bdbf4bc0e34e403d7525"];
+// ran = Math.floor(Math.random() * 1);
+//apiKey = keyBank[ran];
 //}
 
 function fetchFlightInfo() {
@@ -54,7 +54,7 @@ function fetchFlightInfo() {
 
 // "https://api.flightapi.io/onewaytrip/5f8b1ec2a9d31578961b4109f4dfd8/HEL/OUL/2024-05-20/1/0/0/Economy/USD"
 
-    // itineraries.pricing_options.price.amount
+// itineraries.pricing_options.price.amount
 function printAgain() {
     const priceAmount = output.itineraries[0].pricing_options[0].price.amount;
 
