@@ -5,13 +5,13 @@ function on() {
 var tripType = "onewaytrip";
 var apiKey = "65c7bdbf4bc0e34e403d7525";
 //var departAirport = "HEL";
-var arrivalAirport = "OUL";
-var desiredDate = "2024-05-20";
+//var arrivalAirport = "OUL";
+//var desiredDate = "2024-05-20";
 var numAdults = "1";
 var numKids = "0"
 var numBabies = "0";
 var type = "Economy";
-var currency = "USD";
+// var currency = "USD";
 var output = "";
 //function cycleKeys() {
   //  keyBank = ["65c7bdbf4bc0e34e403d752565c7bdbf4bc0e34e403d7525"];
@@ -22,13 +22,18 @@ var output = "";
 function fetchFlightInfo() {
 
     var inputDepartureAirport = document.getElementById('departureAirport').value;
+    var inputArrivalAirport = document.getElementById('arrivalAirport').value;
+    var inputDate = document.getElementById('Date').value;
 
-    //document.getElementById('departureAirportDisplay').innerText = "Departure Airport: " + inputDepartureAirport;
+
+    var inputCurrency = document.getElementById('currency').value;
+
+    document.getElementById('departureAirportDisplay').innerText = "Currency: " + inputDate;
 
 
     // Define the API URL
     //cycleKeys();
-    const apiUrl = "https://api.flightapi.io/" + tripType + "/" + apiKey + "/" + inputDepartureAirport + "/" + arrivalAirport + "/" + desiredDate + "/" + numAdults + "/" + numKids + "/" + numBabies + "/" + type + "/" + currency;
+    const apiUrl = "https://api.flightapi.io/" + tripType + "/" + apiKey + "/" + inputDepartureAirport + "/" + inputArrivalAirport + "/" + inputDate + "/" + numAdults + "/" + numKids + "/" + numBabies + "/" + type + "/" + inputCurrency;
 
     fetch(apiUrl)
         .then(response => response.json())

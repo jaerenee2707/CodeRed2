@@ -39,21 +39,27 @@
             </div>
             <div>
                 <label for="currency">currency</label>
-                <input type="text" id="currency" name="currency">
+                <select id="currency" name="currency">
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="INR">Indian Rupee</option>
+                </select>
             </div>
             <button type="button" onclick="fetchFlightInfo()">Click Me!</button>
         </div>
+
 
         <div classname="right">
             <p id="output"> Output</p>
             <button type="button" onclick="printAgain()">Click Me!</button>
         </div>
 
-        </div>
 
-        <script src="script.js"></script>
+    </div>
 
-    <!-- <div id="departureAirportDisplay">     </div>  -->
+    <script src="script.js"></script>
+
+    <!-- <div id="departureAirportDisplay"></div> -->
 
 
 
