@@ -14,33 +14,42 @@
     <script src="script.js"></script>
     <br />
     <br />
+    <div classname="top">
+        <p>logo</p>
+    </div>
 
-    <div>
-        <label for="triptype">triptype</label>
-        <select id="triptype" name="triptype">
-            <option value="oneway">One Way</option>
-            <option value="roundtrip">Round Trip</option>
-        </select>
+    <div classname="left">
+        <div>
+            <label for="triptype">triptype</label>
+            <select id="triptype" name="triptype">
+                <option value="oneway">One Way</option>
+                <option value="roundtrip">Round Trip</option>
+            </select>
+        </div>
+        <div>
+            <label for="Date">departure date</label>
+            <input type="date" id="Date" name="Date">
+        </div>
+        <div>
+            <label for="departureAirport">departure airport</label>
+            <input type="text" id="departureAirport" name="departureAirport">
+        </div>
+        <div>
+            <label for="arrivalAirport">arrival airport</label>
+            <input type="text" id="arrivalAirport" name="arrivalAirport">
+        </div>
+        <div>
+            <label for="currency">currency</label>
+            <input type="text" id="currency" name="currency">
+        </div>
+        <div>
+            <label for="Date">date</label>
+            <input type="date" id="Date" name="Date">
+        </div>
     </div>
-    <div>
-        <label for="Date">departure date</label>
-        <input type="date" id="Date" name="Date">
-    </div>
-    <div>
-        <label for="departureAirport">departure airport</label>
-        <input type="text" id="departureAirport" name="departureAirport">
-    </div>
-    <div>
-        <label for="arrivalAirport">arrival airport</label>
-        <input type="text" id="arrivalAirport" name="arrivalAirport">
-    </div>
-    <div>
-        <label for="currency">currency</label>
-        <input type="text" id="currency" name="currency">
-    </div>
-    <div>
-        <label for="Date">date</label>
-        <input type="date" id="Date" name="Date">
+
+    <div classname="right">
+        <p id="output"> Output</p>
     </div>
 
     <!-- <div id="departureAirportDisplay">     </div>  -->
