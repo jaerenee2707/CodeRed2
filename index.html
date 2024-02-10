@@ -19,50 +19,43 @@
         </div>
     </div>
 
-    <br />
-    <br />
+    <div class="content">
+        <div class="container">
+            <div class="left">
+                <div>
+                    <label for="triptype">triptype</label>
+                    <select id="triptype" name="triptype">
+                        <option value="oneway">One Way</option>
+                        <option value="roundtrip">Round Trip</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Date">departure date</label>
+                    <input type="date" id="Date" name="Date">
+                </div>
+                <div>
+                    <label for="departureAirport">departure airport</label>
+                    <input type="text" id="departureAirport" name="departureAirport">
+                </div>
+                <div>
+                    <label for="arrivalAirport">arrival airport</label>
+                    <input type="text" id="arrivalAirport" name="arrivalAirport">
+                </div>
+                <div>
+                    <label for="currency">currency</label>
+                    <input type="text" id="currency" name="currency">
+                </div>
+                <button type="button" onclick="fetchFlightInfo()">Click Me!</button>
+            </div>
 
-    <div class="container">
-        <div classname="left">
-            <div>
-                <label for="triptype">triptype</label>
-                <select id="triptype" name="triptype">
-                    <option value="oneway">One Way</option>
-                    <option value="roundtrip">Round Trip</option>
-                </select>
+            <div class="right">
+                <p id="output"> Output</p>
+                <button type="button" onclick="printAgain()">Click Me!</button>
             </div>
-            <div>
-                <label for="Date">departure date</label>
-                <input type="date" id="Date" name="Date">
-            </div>
-            <div>
-                <label for="departureAirport">departure airport</label>
-                <input type="text" id="departureAirport" name="departureAirport">
-            </div>
-            <div>
-                <label for="arrivalAirport">arrival airport</label>
-                <input type="text" id="arrivalAirport" name="arrivalAirport">
-            </div>
-            <div>
-                <label for="currency">currency</label>
-                <input type="text" id="currency" name="currency">
-            </div>
-            <button type="button" onclick="fetchFlightInfo()">Click Me!</button>
         </div>
+    </div>
 
-        <div classname="right">
-            <p id="output"> Output</p>
-            <button type="button" onclick="printAgain()">Click Me!</button>
-        </div>
-
-        </div>
-
-        <script src="script.js"></script>
-
-    <!-- <div id="departureAirportDisplay">     </div>  -->
-
-
-
+    <script src="script.js"></script>
 
 </body>
 

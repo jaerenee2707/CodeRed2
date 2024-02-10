@@ -5,6 +5,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 /* Styling the video container */
@@ -24,36 +25,57 @@ body, html {
     object-fit: cover;
 }
 
-/* Centering the content */
+/* Styling the content */
+.content {
+    padding-top: 100vh; /* Ensure content starts below the video */
+}
+
+/* Styling the container */
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100vh; /* Add padding to ensure content starts after the video */
-    z-index: 1; /* Ensure content appears above the video */
+    background-color: white; /* Set background color */
 }
 
-/* Styling the form container */
-div {
-    margin-bottom: 10px;
+/* Styling the left and right sections */
+.left,
+.right {
+    padding: 20px;
+    flex: 1; /* Equal width */
 }
 
-/* Styling the labels */
+/* Styling for form elements */
 label {
     display: block;
     margin-bottom: 5px;
 }
 
-/* Styling the inputs */
 input[type="text"],
-input[type="date"] {
-    width: 200px;
+input[type="date"],
+select {
+    width: calc(100% - 10px); /* Adjusted width for form elements */
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
-/* Styling the button */
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: slategrey;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack left and right sections on small screens */
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+}
