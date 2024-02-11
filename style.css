@@ -125,13 +125,14 @@ button {
     animation: fadeIn 15s;
 }
 
-#priceDisplay {
-    color: #333; /* Light black text color */
-    font-family: Arial, sans-serif; /* Specify desired font */
-    font-size: 16px; /* Adjust font size as needed */
-    line-height: 1.5; /* Adjust line height as needed */
-    margin-top: 10px; /* Adjust top margin as needed */
+.output-text {
+    font-family: Arial, sans-serif;
+    color: #4a4d4f;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
 }
+
 
 @keyframes fadeIn {
     0% {
