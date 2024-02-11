@@ -45,11 +45,6 @@ function fetchFlightInfo() {
 }
 
 
-
-
-
-
-
 // "https://api.flightapi.io/onewaytrip/5f8b1ec2a9d31578961b4109f4dfd8/HEL/OUL/2024-05-20/1/0/0/Economy/USD"
 
 // itineraries.pricing_options.price.amount

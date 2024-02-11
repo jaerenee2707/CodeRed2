@@ -7,6 +7,7 @@ body, html {
     height: 100%;
     overflow-x: hidden; /* Hide horizontal scrollbar */
     scroll-behavior: smooth;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 /* Styling the video container */
@@ -122,7 +123,20 @@ button {
     font-size: 150px;
     animation: fadeIn 15s;
 }
-#down{
+#down {
+    height: 78px;
+    width: 74px;
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    -ms-transform: translate(-50%, -10%);
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 103;
     z-index: 104;
 }
 #priceDisplay {
