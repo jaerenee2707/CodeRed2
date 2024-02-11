@@ -71,6 +71,33 @@ button {
     border-radius: 3px;
     cursor: pointer;
 }
+#logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#downButton {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {

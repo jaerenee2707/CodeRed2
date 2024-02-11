@@ -61,6 +61,7 @@ function printAgain() {
 var btnDown = document.getElementById("downButton");
 btnDown.onclick = function scrollDown() {
     window.scroll(0, window.scrollY + 1000);
+    console.log("click")
 }
 
 
