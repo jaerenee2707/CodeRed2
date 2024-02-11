@@ -68,6 +68,28 @@ function printAgain() {
             return a.pricing_options[0].price.amount - b.pricing_options[0].price.amount;
         });
 
+        const cheapestItinerary = output.itineraries[0];
+        const cheapestPrice = cheapestItinerary.pricing_options[0].price.amount;
+
+        /****************************************************************** */
+
+        // Display the cheapest itinerary in a popup
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+        // Display the cheapest itinerary in the modal
+        document.getElementById("modalText").innerText = `We've located the cheapest ${inputClassType} class flight for you, from ${inputDepartureAirport} to ${inputArrivalAirport} for ${cheapestPrice} ${inputCurrency}`;
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        /****************************************************************** */
+
         // Print all itineraries from cheapest to most expensive
         output.itineraries.forEach(itinerary => {
             const legId = itinerary.leg_ids[0]; // Assuming only one leg for simplicity
