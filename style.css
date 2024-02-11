@@ -108,8 +108,6 @@ button {
     left: 50%;
     transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
-    color: lightgray;
-    font-size: 16px;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
@@ -124,7 +122,9 @@ button {
     font-size: 150px;
     animation: fadeIn 15s;
 }
-
+#down{
+    z-index: 104;
+}
 #priceDisplay {
     color: #333; /* Light black text color */
     font-family: Arial, sans-serif; /* Specify desired font */
