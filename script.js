@@ -3,7 +3,8 @@ function on() {
 }
 
 var tripType = "onewaytrip";
-var apiKey = "65c87948f47f616e93efde95";
+var apiKey = "65c8f121ce31477d629dbb5b"
+//var apiKey = "65c87948f47f616e93efde95";
 //var departAirport = "HEL";
 //var arrivalAirport = "OUL";
 //var desiredDate = "2024-05-20";
@@ -13,6 +14,7 @@ var numBabies = "0";
 //var type = "Economy";
 // var currency = "USD";
 var output = "";
+
 //function cycleKeys() {
 //  keyBank = ["65c7bdbf4bc0e34e403d752565c7bdbf4bc0e34e403d7525"];
 // ran = Math.floor(Math.random() * 1);
@@ -20,6 +22,8 @@ var output = "";
 //}
 
 function fetchFlightInfo() {
+
+    showLoadingGif();
 
     var inputClassType = document.getElementById('classType').value;
     var inputDepartureAirport = document.getElementById('departureAirport').value;
@@ -38,8 +42,6 @@ function fetchFlightInfo() {
     document.getElementById('priceDisplay').innerText = "SAME INFORMATION";
         return; }
 
-    // Define the API URL
-    //cycleKeys();
     const apiUrl = "https://api.flightapi.io/" + tripType + "/" + apiKey + "/" + inputDepartureAirport + "/" + inputArrivalAirport + "/" + inputDate + "/" + numAdults + "/" + numKids + "/" + numBabies + "/" + inputClassType + "/" + inputCurrency;
 
     fetch(apiUrl)
@@ -48,9 +50,11 @@ function fetchFlightInfo() {
             console.log("Flight Info:", data);
             output = data;
             printAgain()
+            hideLoadingGif();
         })
         .catch(error => {
             console.error("Error fetching flight info:", error);
+            hideLoadingGif();
         });
 }
 
@@ -159,21 +163,19 @@ function scrollDown() {
     console.log("click")
 }
 
-//Header scroll
-//window.onscroll = function () { myFunction() };
+function showLoadingGif() {
+    const loadingGif = document.createElement("img");
+    loadingGif.src = "planeGif.gif";
+    loadingGif.id = "loading-gif";
+    loadingGif.width = 400;
+    document.getElementById('priceDisplay').innerText = "";
+    document.getElementById('priceDisplay').appendChild(loadingGif);
+}
 
-// Get the header
-//var header = document.getElementById("header");
-
-// Get the offset position of the navbar
-//var sticky = header.offsetTop;
-
-//// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-//function myFunction() {
-//    if (window.pageYOffset > sticky) {
-//        header.classList.add("sticky");
-//    } else {
-//        header.classList.remove("sticky");
-//    }
-// }
+function hideLoadingGif() {
+    const loadingGif = document.getElementById("loading-gif");
+    if (loadingGif) {
+        loadingGif.parentNode.removeChild(loadingGif);
+    }
+}
 
