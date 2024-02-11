@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -37,77 +37,51 @@
             <div style="float: right;">
                 <h2>HOTELS</h2>
             </div>
-            <div style="float: right;">
-                <h2>MEMBERSHIP</h2>
-            </div>
         </div>
 
-        <div class="container">
-            <div class="left">
-                <div>
-                    <label for="triptype">trip type</label>
-                    <select id="triptype" name="triptype">
-                        <option value="oneway">One Way</option>
-                        <option value="roundtrip">Round Trip</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="Date">departure date</label>
-                    <input type="date" id="Date" name="Date">
-                </div>
-                <div>
-                    <label for="departureAirport">departure airport</label>
-                    <input type="text" id="departureAirport" name="departureAirport">
-                </div>
-                <div>
-                    <label for="classType">Class</label>
-                    <select id="classType" name="classType">
-                        <option value="First">Business</option>
-                        <option value="Business">First</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="arrivalAirport">arrival airport</label>
-                    <select id="arrivalAirport" name="arrivalAirport">
-                        <option value="DPS">Bali, Indonesia</option>
-                        <option value="BOB">Bora Bora, French Polynesia</option>
-                        <option value="CPH">Copenhagen, Denmark</option>
-                        <option value="DXB">Dubai, United Arab Emirates</option>
-                        <option value="GVA">Geneva, Switzerland</option>
-                        <option value="HKG">Hong Kong, China</option>
-                        <option value="CDG">Paris, France</option>
-                        <option value="SIN">Singapore</option>
-                        <option value="TLV">Tel Aviv, Israel</option>
-                        <option value="ZRH">Zurich, Switzerland</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="currency">currency</label>
-                    <select id="currency" name="currency">
-                        <option value="USD">US Dollar</option>
-                        <option value="EUR">Euro</option>
-                        <option value="INR">Indian Rupee</option>
-                    </select>
-                </div>
-                <button type="button" id="run" onclick="fetchFlightInfo()">Click Me!</button>
-            </div>
+             <!-- Error message container -->
+             <div id="errorMessage" style="color: red;"></div>
 
-            <div class="right">
-                <div id="priceDisplay"></div>
-            </div>
-
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p id="modalText"></p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-
+             <div class="container">
+                 <div class="left">
+                     <div>
+                         <label for="triptype">triptype</label>
+                         <select id="triptype" name="triptype">
+                             <option value="oneway">One Way</option>
+                             <option value="roundtrip">Round Trip</option>
+                         </select>
+                     </div>
+                     <div>
+                         <label for="Date">departure date</label>
+                         <input type="date" id="Date" name="Date">
+                     </div>
+                     <div>
+                         <label for="departureAirport">departure airport</label>
+                         <input type="text" id="departureAirport" name="departureAirport">
+                     </div>
+                     <div>
+                         <label for="arrivalAirport">arrival airport</label>
+                         <input type="text" id="arrivalAirport" name="arrivalAirport">
+                     </div>
+                     <div>
+                         <label for="currency">currency</label>
+                         <select id="currency" name="currency">
+                             <option value="USD">US Dollar</option>
+                             <option value="EUR">Euro</option>
+                             <option value="INR">Indian Rupee</option>
+                         </select>
+                     </div>
+                     <button type="button" id="run" onclick="fetchFlightInfo()">Click Me!</button>
+                 </div>
+     
+                 <div class="right">
+                     <div id="priceDisplay"></div>
+                 </div>
+             </div>
+         </div>
+     
+         <script src="script.js"></script>
+     
 </body>
 
 </html>
