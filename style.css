@@ -109,6 +109,7 @@ button {
     border-radius: 5px;
     text-decoration: none;
     z-index:101;
+    opacity: 90%;
 }
 #downArrow {
     position: absolute;
@@ -130,7 +131,7 @@ button {
 .fade-in-text {
     font-family: Arial;
     font-size: 150px;
-    animation: fadeIn 15s;
+    animation: fadeIn 10s;
 }
 
 .output-text {
@@ -168,7 +169,7 @@ button {
 
 /* Styling the header */
 .header {
-    background-color: black;
+    background-color: #232323;
     padding: 20px;
     font-family: 'Hubballi', sans-serif; /* Set the font to Huballi or the desired font */
     font-weight: lighter;
@@ -179,6 +180,7 @@ button {
         margin: 0;
         float: left; /* Ensure the title stays on the left */
         color: white;
+        cursor: pointer;
     }
 
     .header h2 {
@@ -188,10 +190,11 @@ button {
         text-decoration: none;
         font-size: 17px;
         padding-right: 15px;
+        cursor: pointer;
     }
 
         .header h2:hover {
-            color: slategray;
+            color: #7D7D7D;
         }
 
         .header h2.split {
@@ -205,11 +208,9 @@ button {
     top: 0;
     width: 100%
 }
-/* Page content */
 .contentHeader {
     padding: 16px;
 }
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .contentHeader {
     padding-top: 102px;
 }

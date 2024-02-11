@@ -136,8 +136,7 @@ function printAgain() {
         Departure Time:                  ${departureTime.toLocaleString()}
         Arrival Time:                    ${arrivalTime.toLocaleString()}
         Duration:                        ${flightDuration} minutes
-        Airline:                         ${airline}
-        ------------------------------------------`;
+        Airline:                         ${airline}`;
 
         // Append the formatted text to the element
         document.getElementById('priceDisplay').classList.add('output-text');
@@ -177,3 +176,5 @@ function hideLoadingGif() {
     }
 }
 
+var AboutLink = document.getElementById("about");
+AboutLink.onclick("");
