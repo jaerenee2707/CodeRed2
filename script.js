@@ -225,4 +225,9 @@ function hideLoadingGif() {
 }
 
 var AboutLink = document.getElementById("about");
-AboutLink.onclick("");
+AboutLink.onclick = showAbout();
+
+function showAbout() {
+    AboutLink.style.display("block");
+}
+
