@@ -66,12 +66,12 @@ function printAgain() {
 }
 
 var btnDown = document.getElementById("downButton");
-btnDown.onclick = function scrollDown() {
-    window.scroll(0, window.scrollY + 1000);
-    console.log("click")
-}
+btnDown.onclick = scrollDown()
+
 var arrDown = document.getElementById("downArrow");
-arrDown.onclick = function scrollDown() {
+arrDown.onclick = scrollDown()
+
+function scrollDown() {
     window.scroll(0, window.scrollY + 1000);
     console.log("click")
 }
