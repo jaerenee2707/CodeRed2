@@ -8,7 +8,15 @@ body, html {
     overflow-x: hidden; /* Hide horizontal scrollbar */
     scroll-behavior: smooth;
 }
+/*hide scroll bar button keep scrolling*/
+body::-webkit-scrollbar {
+    display: none;
+}
 
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 /* Styling the video container */
 .video-container {
     position: fixed;

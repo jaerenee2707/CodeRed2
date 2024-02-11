@@ -73,8 +73,6 @@ function printAgain() {
     var inputCurrency = document.getElementById('currency').value;
     var inputClassType = document.getElementById('classType').value;
 
-    // Assuming output is retrieved from the flight API
-    // Assuming output.itineraries is an array
     if (output && output.itineraries && output.itineraries.length > 0) {
         // Sort itineraries by price
         output.itineraries.sort((a, b) => {
@@ -103,53 +101,53 @@ function printAgain() {
 
         /****************************************************************** */
 
-        // Print all itineraries from cheapest to most expensive
-        output.itineraries.forEach(itinerary => {
-            const legId = itinerary.leg_ids[0]; // Assuming only one leg for simplicity
-            const leg = output.legs.find(leg => leg.id === legId);
-            const segmentId = leg.segment_ids[0]; // Assuming only one segment for simplicity
-            const segment = output.segments.find(segment => segment.id === segmentId);
+        // Print the cheapest itinerary
+        const itinerary = cheapestItinerary;
+        const legId = itinerary.leg_ids[0]; // Assuming only one leg for simplicity
+        const leg = output.legs.find(leg => leg.id === legId);
+        const segmentId = leg.segment_ids[0]; // Assuming only one segment for simplicity
+        const segment = output.segments.find(segment => segment.id === segmentId);
 
-            const departureTime = new Date(segment.departure);
-            const arrivalTime = new Date(segment.arrival);
-            const flightDuration = segment.duration;
-            const operatingCarrierId = segment.operating_carrier_id;
+        const departureTime = new Date(segment.departure);
+        const arrivalTime = new Date(segment.arrival);
+        const flightDuration = segment.duration;
+        const operatingCarrierId = segment.operating_carrier_id;
 
-            // Function to get airline name by operating carrier ID
-            function getAirlineNameByOperatingCarrierId(operatingCarrierId) {
-                // Find the carrier with the matching operating carrier ID
-                const carrier = output.carriers.find(carrier => carrier.id === operatingCarrierId);
-                // Return the airline name if the carrier is found, otherwise return "Unknown Airline"
-                return carrier ? carrier.name : "Unknown Airline";
-            }
+        // Function to get airline name by operating carrier ID
+        function getAirlineNameByOperatingCarrierId(operatingCarrierId) {
+            // Find the carrier with the matching operating carrier ID
+            const carrier = output.carriers.find(carrier => carrier.id === operatingCarrierId);
+            // Return the airline name if the carrier is found, otherwise return "Unknown Airline"
+            return carrier ? carrier.name : "Unknown Airline";
+        }
 
-            const airline = getAirlineNameByOperatingCarrierId(operatingCarrierId);
+        const airline = getAirlineNameByOperatingCarrierId(operatingCarrierId);
 
-            console.log("Price Amount:", itinerary.pricing_options[0].price.amount);
-            console.log("Departure Time:", departureTime);
-            console.log("Arrival Time:", arrivalTime);
-            console.log("Flight Duration:", flightDuration);
-            console.log("Airline:", airline);
+        console.log("Price Amount:", itinerary.pricing_options[0].price.amount);
+        console.log("Departure Time:", departureTime);
+        console.log("Arrival Time:", arrivalTime);
+        console.log("Flight Duration:", flightDuration);
+        console.log("Airline:", airline);
 
-            // Formatting the output text
-            var outputText = `
-            ${inputClassType} class flight from ${inputDepartureAirport} to ${inputArrivalAirport}
-            Price:                           ${itinerary.pricing_options[0].price.amount} ${inputCurrency}
-            Departure Time:                  ${departureTime.toLocaleString()}
-            Arrival Time:                    ${arrivalTime.toLocaleString()}
-            Duration:                        ${flightDuration} minutes
-            Airline:                         ${airline}
-            ------------------------------------------`;
+        // Formatting the output text
+        var outputText = `
+        ${inputClassType} class flight from ${inputDepartureAirport} to ${inputArrivalAirport}
+        Price:                           ${itinerary.pricing_options[0].price.amount} ${inputCurrency}
+        Departure Time:                  ${departureTime.toLocaleString()}
+        Arrival Time:                    ${arrivalTime.toLocaleString()}
+        Duration:                        ${flightDuration} minutes
+        Airline:                         ${airline}
+        ------------------------------------------`;
 
-            // Append the formatted text to the element
-            document.getElementById('priceDisplay').classList.add('output-text');
-            document.getElementById('priceDisplay').innerText += outputText;
-        });
+        // Append the formatted text to the element
+        document.getElementById('priceDisplay').classList.add('output-text');
+        document.getElementById('priceDisplay').innerText = outputText;
     } else {
         console.error("Error: Unable to retrieve flight information.");
         document.getElementById('priceDisplay').innerText = "No available flights. Please re-submit form."
         // Display an error message to the user or handle the error appropriately   
     }
+
 }
 
 var btnDown = document.getElementById("downButton");
