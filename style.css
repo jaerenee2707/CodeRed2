@@ -1,13 +1,12 @@
 ﻿
-
-/* Resetting default margin and padding */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
+
 /*hide scroll bar button keep scrolling*/
 body::-webkit-scrollbar {
     display: none;
@@ -17,7 +16,7 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-/* Styling the video container */
+
 .video-container {
     position: fixed;
     top: 0;
@@ -25,7 +24,7 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -2; /* Ensure video stays behind the content */
+    z-index: -2;
 }
 
 .video-bg {
@@ -39,24 +38,21 @@ body{
     padding-top: 100vh; /* Ensure content starts below the video */
 }
 
-/* Styling the container */
 .container {
     display: flex;
-    background-color: white; /* Set background color */
+    background-color: white;
 }
 
-/* Styling the left and right sections */
 .left,
 .right {
     padding: 20px;
-    flex: 1; /* Equal width */
+    flex: 1;
 }
 
 .right {
     border-left: 2px dashed black;
 }
 
-/* Styling for form elements */
 label {
     display: block;
     margin-bottom: 5px;
@@ -65,7 +61,7 @@ label {
 input[type="text"],
 input[type="date"],
 select {
-    width: calc(100% - 10px); /* Adjusted width for form elements */
+    width: calc(100% - 10px);
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -80,6 +76,7 @@ button {
     border-radius: 3px;
     cursor: pointer;
 }
+
 #logo {
     position: fixed;
     top: 50%;
@@ -167,7 +164,7 @@ button {
     }
 }
 
-/* Styling the header */
+
 .header {
     background-color: #232323;
     padding: 20px;
@@ -222,10 +219,10 @@ button {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 100%;
+    height: 100%;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content/Box */
@@ -235,12 +232,11 @@ button {
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Set the width to 50% of the viewport */
-    font-family: Arial, sans-serif; /* Set font family to Arial with fallback to sans-serif */
-    font-weight: bold; /* Set font weight to bold */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add box shadow */
+    font-family: Arial, sans-serif;
+    font-weight: bold; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-/* Close Button */
 .close {
     color: #aaa;
     float: right;
