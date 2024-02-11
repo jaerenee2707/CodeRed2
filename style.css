@@ -1,4 +1,4 @@
-﻿/* style.css */
+﻿
 
 /* Resetting default margin and padding */
 body, html {
@@ -89,7 +89,22 @@ button {
 
 #downButton {
     position: absolute;
-    top: 85%;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    -ms-transform: translate(-50%, -10%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index:100;
+}
+#downArrow {
+    position: absolute;
+    top: 84%;
     left: 50%;
     transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
@@ -100,21 +115,8 @@ button {
     cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
-}
-#downArrow {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, 24%);
-    -ms-transform: translate(-50%, 24%);
-    color: lightgray;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    z-index: 
+    z-index:100;
+    opacity: 60%
 }
 
 .fade-in-text {
@@ -146,18 +148,40 @@ button {
         width: 100%;
     }
 }
+
 /* Styling the header */
 .header {
-    background-color: white;
+    background-color: black;
     padding: 20px;
-    text-align: left; /* Align to the left */
-    font-family: 'Huballi', sans-serif; /* Set the font to Huballi or the desired font */
+    font-family: 'Hubballi', sans-serif; /* Set the font to Huballi or the desired font */
     font-weight: lighter;
+    overflow: hidden;
 }
 
-.header h1 {
-    margin: 0;
-}
+    .header h1 {
+        margin: 0;
+        float: left; /* Ensure the title stays on the left */
+        color: white;
+    }
+
+    .header h2 {
+        float: right; /* Ensure the "About Us" link stays on the right */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        padding-right: 15px;
+    }
+
+        .header h2:hover {
+            color: slategray;
+        }
+
+        .header h2.split {
+            background-color: #04AA6D;
+            color: white;
+        }
+
 
 .sticky {
     position: fixed;

@@ -63,6 +63,11 @@ btnDown.onclick = function scrollDown() {
     window.scroll(0, window.scrollY + 1000);
     console.log("click")
 }
+var arrDown = document.getElementById("downArrow");
+arrDown.onclick = function scrollDown() {
+    window.scroll(0, window.scrollY + 1000);
+    console.log("click")
+}
 
 //Header scroll
 //window.onscroll = function () { myFunction() };
