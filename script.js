@@ -38,7 +38,7 @@ function fetchFlightInfo() {
     }
         
     if (inputDepartureAirport ==  inputArrivalAirport)
-    {console.error("SAME INFORMATION");
+    {console.error("Destination and Arrival airports are the same.");
     document.getElementById('priceDisplay').innerText = "SAME INFORMATION";
         return; }
 
@@ -60,12 +60,60 @@ function fetchFlightInfo() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    var dateInput = document.getElementById('Date');
+    var departureInput = document.getElementById('departureAirport');
+    var arrivalInput = document.getElementById('arrivalAirport');
 
+    var dateError = document.getElementById('dateError');
+    var departureError = document.getElementById('departureError');
+    var arrivalError = document.getElementById('arrivalError');
 
+    dateInput.addEventListener('input', validateDate);
+    departureInput.addEventListener('input', validateDeparture);
+    arrivalInput.addEventListener('input', validateArrival);
+
+    function validateDate() {
+        var currentDate = new Date();
+        var selectedDate = new Date(dateInput.value);
+
+        if (selectedDate < currentDate) {
+            dateError.innerText = "Departure date cannot be in the past.";
+        } else {
+            dateError.innerText = "";
+            document.getElementById('run').disabled = true;
+        }
+    }
+
+    function validateDeparture() {
+        if (departureInput.value === arrivalInput.value) {
+            departureError.innerText = "Departure and arrival airports cannot be the same.";
+        } else {
+            departureError.innerText = "";
+            checkValidity();
+        }
+    }
+
+    function validateArrival() {
+        if (arrivalInput.value === departureInput.value) {
+            arrivalError.innerText = "Arrival and departure airports cannot be the same.";
+        } else {
+            arrivalError.innerText = "";
+            checkValidity();
+        }
+    }
+
+    function checkValidity() {
+        if (dateError.innerText == "" && departureError.innerText === "" && arrivalError.innerText === "") {
+            runButton.disabled = false;
+        } else {
+            runButton.disabled = true;
+        }
+    }
+});
 
 
 // "https://api.flightapi.io/onewaytrip/65c87948f47f616e93efde95/HEL/OUL/2024-05-20/1/0/0/Economy/USD"
-
 // itineraries.pricing_options.price.amount
 function printAgain() {
     var inputDepartureAirport = document.getElementById('departureAirport').value;
