@@ -111,3 +111,15 @@ button {
         width: 100%;
     }
 }
+/* Styling the header */
+.header {
+    background-color: white;
+    padding: 20px;
+    text-align: left; /* Align to the left */
+    font-family: 'Huballi', sans-serif; /* Set the font to Huballi or the desired font */
+    font-weight: lighter;
+}
+
+.header h1 {
+    margin: 0;
+}
