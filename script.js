@@ -37,6 +37,7 @@ function fetchFlightInfo() {
         .then(data => {
             console.log("Flight Info:", data);
             output = data;
+            printAgain()
         })
         .catch(error => {
             console.error("Error fetching flight info:", error);
@@ -53,9 +54,15 @@ function fetchFlightInfo() {
 
 // itineraries.pricing_options.price.amount
 function printAgain() {
-    const priceAmount = output.itineraries[0].cheapest_price.amount;
+    var inputDepartureAirport = document.getElementById('departureAirport').value;
+    var inputArrivalAirport = document.getElementById('arrivalAirport').value;
+    var inputCurrency = document.getElementById('currency').value;
 
+    const priceAmount = output.itineraries[0].cheapest_price.amount;
     console.log("Price Amount:", priceAmount);
+    document.getElementById('priceDisplay').innerText = "The current cheapest flight from " + inputDepartureAirport +
+        " to " + inputArrivalAirport + " is " + priceAmount + " " + inputCurrency
+
 }
 
 var btnDown = document.getElementById("downButton");
