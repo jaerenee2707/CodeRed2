@@ -9,9 +9,6 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1>Sovereign Skies</h1>
-    </div>
 
     <div class="video-container">
         <video autoplay loop muted class="video-bg">
@@ -19,10 +16,15 @@
         </video>
 
     </div>
-    <p id="downButton">Book Now</p>
+    <a href="#run" id="downButton">Book Now</a>
     <img id="logo" src="logo.png" />
 
+    
+
     <div class="content" id="booking">
+        <div class="header">
+            <h1>Sovereign Skies</h1>
+        </div>
         <div class="container">
             <div class="left">
                 <div>
@@ -52,7 +54,7 @@
                         <option value="INR">Indian Rupee</option>
                     </select>
                 </div>
-                <button type="button" onclick="fetchFlightInfo()">Click Me!</button>
+                <button type="button" id="run" onclick="fetchFlightInfo()">Click Me!</button>
             </div>
 
             <div class="right">

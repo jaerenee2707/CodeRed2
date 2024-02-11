@@ -6,6 +6,7 @@ body, html {
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Hide horizontal scrollbar */
+    scroll-behavior: smooth;
 }
 
 /* Styling the video container */
@@ -122,4 +123,18 @@ button {
 
 .header h1 {
     margin: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+/* Page content */
+.contentHeader {
+    padding: 16px;
+}
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .contentHeader {
+    padding-top: 102px;
 }
