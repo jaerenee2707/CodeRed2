@@ -89,17 +89,51 @@ button {
 
 #downButton {
     position: absolute;
-    top: 90%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
-    color: white;
+    color: lightgray;
     font-size: 16px;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
 }
+#downArrow {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 24%);
+    -ms-transform: translate(-50%, 24%);
+    color: lightgray;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 
+}
+
+.fade-in-text {
+    font-family: Arial;
+    font-size: 150px;
+    animation: fadeIn 15s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {

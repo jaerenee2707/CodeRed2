@@ -3,7 +3,7 @@ function on() {
 }
 
 var tripType = "onewaytrip";
-var apiKey = "65c7bdbf4bc0e34e403d7525";
+var apiKey = "65c8196de8e0357f066b5665";
 //var departAirport = "HEL";
 //var arrivalAirport = "OUL";
 //var desiredDate = "2024-05-20";
