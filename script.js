@@ -27,7 +27,16 @@ function fetchFlightInfo() {
     var inputDate = document.getElementById('Date').value;
     var inputCurrency = document.getElementById('currency').value;
 
-
+   if (!inputDepartureAirport) {
+        console.error("Missing input data. Please fill in all fields.");
+        document.getElementById('priceDisplay').innerText = "Missing input data. Please fill in all fields.";
+        return; // Stop further execution
+    }
+        
+    if (inputDepartureAirport ==  inputArrivalAirport)
+    {console.error("SAME INFORMATION");
+    document.getElementById('priceDisplay').innerText = "SAME INFORMATION";
+        return; }
 
     // Define the API URL
     //cycleKeys();
