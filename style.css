@@ -16,7 +16,7 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Ensure video stays behind the content */
+    z-index: -2; /* Ensure video stays behind the content */
 }
 
 .video-bg {
@@ -83,6 +83,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    z-index: -1;
 }
 
 #downButton {
